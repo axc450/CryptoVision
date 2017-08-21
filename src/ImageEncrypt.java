@@ -27,7 +27,7 @@ public class ImageEncrypt
 
 	private static BufferedImage importImage()
 	{	
-		String[] exts = {"bmp", "png", "jpg"};
+		String[] exts = {"bmp", "png", "jpg", "gif"};
 		JFileChooser fileChooser = new JFileChooser();				//Create new file chooser
 		FileNameExtensionFilter fileExFilter = new FileNameExtensionFilter("Images", exts);		//Set file filter to images only
 		fileChooser.setAcceptAllFileFilterUsed(false);				//Set chooser to only allow images
