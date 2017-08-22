@@ -1,7 +1,12 @@
 import javax.imageio.ImageIO;
+
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.security.MessageDigest;
@@ -9,25 +14,53 @@ import java.util.Random;
 
 public class ImageEncrypt
 {
+	private static final String[] exts = {"bmp", "png", "jpg", "gif"};
 	
-	//private static JFrame frame = new JFrame(); 	//To do with UIs later
 	private static String currentPath;				//Current path of selected file
 	private static String currentExt;				//Current extension of selected file
+	private static String fileName;
 	
 	private static String key = "hello";			//XOR key to use
 	
 	public static void main(String[] args)
 	{
-		BufferedImage inputImage = importImage();					//Import an image
+		BufferedImage inputImage;
+		if(args.length > 0)
+		{
+			inputImage = imageFromString(args[0]);
+		}
+		else
+		{
+			inputImage = importImage();
+		}
 		BufferedImage outputImage = encryptXOR(inputImage,key);		//Encrypt the image
 		exportImage(outputImage);									//Export the image
 		System.out.println("Image Encryption Successful!");			//Debug message
 		System.exit(0);												//Exit program
 	}
 
+	private static BufferedImage imageFromString(String strPath) 
+	{
+		Path jPath = Paths.get(strPath);
+		currentPath = jPath.toFile().getParent();
+		fileName = jPath.getFileName().toString();
+		currentExt = fileName.substring(fileName.lastIndexOf(".")+1,fileName.length());
+		try
+		{
+			BufferedImage imageData = ImageIO.read(jPath.toFile());		//Read the image into memory
+			return imageData;															//Return this data
+		} 
+		catch (Exception e)
+		{
+			System.out.println("Something went wrong importing your image");			//Debug message
+			System.out.println("Error: " + e.getMessage());								//Debug message
+			System.exit(1);																//Exit program
+			return null;
+		}
+	}
+
 	private static BufferedImage importImage()
 	{	
-		String[] exts = {"bmp", "png", "jpg", "gif"};
 		JFileChooser fileChooser = new JFileChooser();				//Create new file chooser
 		FileNameExtensionFilter fileExFilter = new FileNameExtensionFilter("Images", exts);		//Set file filter to images only
 		fileChooser.setAcceptAllFileFilterUsed(false);				//Set chooser to only allow images
@@ -39,7 +72,7 @@ public class ImageEncrypt
 		}
 		
 		currentPath = fileChooser.getSelectedFile().getParent();						//Set current path to the folder where the image is stored
-		String fileName = fileChooser.getSelectedFile().getName();						//Set the filename of the selected file
+		fileName = fileChooser.getSelectedFile().getName();							//Set the filename of the selected file
 		currentExt = fileName.substring(fileName.lastIndexOf(".")+1,fileName.length());	//Set the extension of the file type
 
 		try
