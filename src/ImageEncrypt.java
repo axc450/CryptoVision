@@ -36,7 +36,7 @@ public class ImageEncrypt
 		}
 		BufferedImage outputImage = encryptXOR(inputImage,key);		//Encrypt the image
 		exportImage(outputImage);									//Export the image
-		System.out.println("Image Encryption Successful!");			//Debug message
+		System.out.println("\nImage Encryption Successful!");			//Debug message
 		System.exit(0);												//Exit program
 	}
 
@@ -118,6 +118,8 @@ public class ImageEncrypt
 	                    Color newColor = new Color(colorRED, colorGREEN, colorBLUE);		//Create the new color
 	                    inputImage.setRGB(x, y, newColor.getRGB());							//Change the input image pixel at this location
 	                }
+	                
+	                printPercent((int)Math.ceil(100 * (y+1)/inputImage.getHeight()));
 	            }
 			
 			return inputImage;														//Return the new image
@@ -150,5 +152,11 @@ public class ImageEncrypt
 		long a = md5Result[0] * 256 * md5Result[1] + 256 * 256 * md5Result[2] + 256 * 256 * 256 * md5Result[3];
 		long b = md5Result[4] * 256 * md5Result[5] + 256 * 256 * md5Result[6] + 256 * 256 * 256 * md5Result[7];
 		return a ^ b;
+	}
+	
+	private static void printPercent(int p)
+	{
+		System.out.print("\rEncrypting: " + p + "%");
+		System.out.flush();
 	}
 }
