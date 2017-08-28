@@ -20,7 +20,7 @@ public class ImageEncrypt
 	private static String currentExt;				//Current extension of selected file
 	private static String fileName;
 	
-	private static String key = "hello";			//XOR key to use
+	private static String key = "e17ea208d03308b150e6dd9cf8a10387";			//XOR key to use
 	
 	public static void main(String[] args)
 	{
