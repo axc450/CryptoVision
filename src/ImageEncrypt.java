@@ -10,6 +10,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.security.MessageDigest;
+import java.util.Arrays;
 import java.util.Random;
 
 public class ImageEncrypt
@@ -45,6 +46,11 @@ public class ImageEncrypt
 		currentPath = jPath.toFile().getParent();
 		fileName = jPath.getFileName().toString();
 		currentExt = fileName.substring(fileName.lastIndexOf(".")+1,fileName.length());
+		if(!Arrays.asList(exts).contains(currentExt))
+		{
+			System.out.println("The selected file was not an image!");
+			System.exit(1);
+		}
 		try
 		{
 			BufferedImage imageData = ImageIO.read(jPath.toFile());		//Read the image into memory
