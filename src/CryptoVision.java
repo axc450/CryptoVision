@@ -34,7 +34,6 @@ public class CryptoVision
 			inputImage = importImage();
 		}
 		
-		//BufferedImage outputImage = encryptXOR(inputImage,d_key);		//Encrypt the image
 		BufferedImage outputImage = en_image.encrypt(inputImage);		//Encrypt the image
 		exportImage(outputImage);									//Export the image
 		System.out.println("\nImage Encryption Successful!");			//Debug message
@@ -73,6 +72,7 @@ public class CryptoVision
 		fileChooser.setAcceptAllFileFilterUsed(false);				//Set chooser to only allow images
 		fileChooser.setFileFilter(fileExFilter);					//Set the file filter
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);	//Set the file chooser to only accept files
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir"))); //Set the file chooser's default path
 		if (!(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION))	//If a non valid option has been chosen
 		{
 			System.exit(0);											//Exit program
