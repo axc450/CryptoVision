@@ -12,12 +12,12 @@ A segment of a larger piece of security suite software (CryptoVision) to allow i
 
 The encryptor itself is a single Jar file however some test images are included. To run the encryptor, navigate to the folder in which the Jar is contained, and run the follow from a terminal/command line.
 
-```java -jar ImageEnrypt.jar
+```java -jar CryptoVision.jar
 ```
 
 You can also specify the image file to process straight from the command line.
 
-```java -jar ImageEncrypt.jar Path/To/Image/File
+```java -jar CryptoVision.jar Path/To/Image/File
 ```
 
 ## Repo
@@ -28,5 +28,5 @@ You can also specify the image file to process straight from the command line.
 	Sample test images
 - `README.md`	
 	This readme file
-- `ImageEncrypt.jar`	
+- `CryptoVision.jar`	
 	The runnable image encryptor
