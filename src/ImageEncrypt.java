@@ -16,6 +16,9 @@ public class ImageEncrypt
 	{
 			try
 			{
+				BufferedImage encryptedImage = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+				
+				
 				MessageDigest md5Generator = MessageDigest.getInstance("MD5");				//Create a MD5 generator
 				byte[] md5Result = md5Generator.digest(key.getBytes());						//Create the hash based on the key
 			
@@ -33,13 +36,13 @@ public class ImageEncrypt
 	                    int colorGREEN = color.getGreen()^randomGenerator.nextInt(255);		//Create a new GREEN value based off the XOR of the GREEN value and MD5 hash
 	                    int colorBLUE = color.getBlue()^randomGenerator.nextInt(255);		//Create a new BLUE value based off the XOR of the BLUE value and MD5 hash
 	                    Color newColor = new Color(colorRED, colorGREEN, colorBLUE);		//Create the new color
-	                    inputImage.setRGB(x, y, newColor.getRGB());							//Change the input image pixel at this location
+	                    encryptedImage.setRGB(x, y, newColor.getRGB());						//Change the input image pixel at this location
 	                }
 	                
 	                CryptoVision.printPercent((int)Math.ceil(100 * (y+1)/inputImage.getHeight()));
 	            }
 			
-			return inputImage;														//Return the new image
+			return encryptedImage;											//Return the new image
 		}
 	    catch(Exception e)
 	    {

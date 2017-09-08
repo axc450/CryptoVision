@@ -100,7 +100,7 @@ public class CryptoVision
 	{
 		try
 		{
-			ImageIO.write(outputImage, currentExt, new File(currentPath + "/output." + currentExt));	//Write out the new image
+			ImageIO.write(outputImage, "png", new File(currentPath + "/output.png"));	//Write out the new image
 		}
 		catch(Exception e)
 		{
