@@ -17,14 +17,24 @@ public class CryptoVision
 	private static String currentPath;				//Current path of selected file
 	private static String currentExt;				//Current extension of selected file
 	private static String fileName;
-	private static ImageEncrypt en_image;
+	private static ImageEncrypt en_image;	
 	private static String d_key = "e17ea208d03308b150e6dd9cf8a10387";			//XOR key to use
 	
 	public static void main(String[] args)
 	{
-		en_image = new ImageEncrypt(d_key);
-		
 		BufferedImage inputImage;
+		
+		if(args.length > 2)
+		{
+			System.out.println("Too many arguments were given!");			//Debug message
+			System.exit(1);												//Exit program
+		}
+		
+		if(args.length == 2)
+		{
+			d_key = args[1];
+		}
+
 		if(args.length > 0)
 		{
 			inputImage = imageFromString(args[0]);
@@ -33,6 +43,8 @@ public class CryptoVision
 		{
 			inputImage = importImage();
 		}
+		
+		en_image = new ImageEncrypt(d_key);
 		
 		BufferedImage outputImage = en_image.encrypt(inputImage);		//Encrypt the image
 		exportImage(outputImage);									//Export the image
