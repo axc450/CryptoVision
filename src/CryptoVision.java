@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class CryptoVision
 {
-	private static final String[] exts = {"bmp", "png", "jpg", "gif"};
+	private static final String[] exts = {"bmp", "png", "jpg", "jpeg", "gif"};
 	
 	private static String currentPath;				//Current path of selected file
 	private static String currentExt;				//Current extension of selected file
