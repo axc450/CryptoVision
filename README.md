@@ -15,9 +15,14 @@ The encryptor itself is a single Jar file however some test images are included.
 ```java -jar CryptoVision.jar
 ```
 
-You can also specify the image file to process straight from the command line.
+You can specify the image file to process straight from the command line.
 
 ```java -jar CryptoVision.jar Path/To/Image/File
+```
+
+You can also specify the encryption key from the command line.
+
+```java -jar CryptoVision.jar Path/To/Image/File KeyToUse
 ```
 
 ## Repo
