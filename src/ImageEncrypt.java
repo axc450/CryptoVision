@@ -22,9 +22,7 @@ public class ImageEncrypt
 		}
 		catch(Exception e)
 	    {
-	    	System.out.println("Something went wrong setting up the encryptor");		//Debug message
-			System.out.println("Error: " + e.getMessage());							//Debug message
-			System.exit(1);															//Exit program
+			CryptoVision.throwError("Something went wrong setting up the encryptor", e);
 	    }
 	}
 
@@ -50,9 +48,7 @@ public class ImageEncrypt
 		}
 	    catch(Exception e)
 	    {
-	    	System.out.println("Something went wrong encrypting your image");		//Debug message
-			System.out.println("Error: " + e.getMessage());							//Debug message
-			System.exit(1);															//Exit program
+	    	CryptoVision.throwError("Something went wrong encrypting your image", e);
 			return null;
 	    }
 	}
