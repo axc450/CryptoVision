@@ -15,7 +15,7 @@ public class Print
 
 	public static void throwError(String msg)	//Provides output when an error occurs (without exception message)
 	{
-		System.out.println("Error: " + msg);	//Ouput message
+		System.out.println("Error: " + msg);	//Output message
 		System.exit(1);							//Exit Program
 	}
 }
