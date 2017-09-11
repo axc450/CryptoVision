@@ -1,23 +1,23 @@
 # CryptoVison
 
-MD5 Image Encryptor.
+MD5 Data Encryptor.
 
 _The CryptoVision project was originally developed as part of a Computer Science BSc Degree._
 
 ## About
 
-A segment of a larger piece of security suite software (CryptoVision) to allow images to be encrypted/decrypted using an MD5 crypto algorithm.
+A segment of a larger piece of security suite software (CryptoVision) to allow data (images/text) to be encrypted/decrypted using an MD5 crypto algorithm.
 
 ## Getting Started
 
-The encryptor itself is a single Jar file however some test images are included. To run the encryptor, navigate to the folder in which the Jar is contained, and run the follow from a terminal/command line.
+The encryptor itself is a single Jar file however some test images/text are included. To run the encryptor, navigate to the folder in which the Jar is contained, and run the follow from a terminal/command line.
 
 ```java -jar CryptoVision.jar
 ```
 
-You can specify the image file to process straight from the command line.
+You can specify the data file to process straight from the command line.
 
-```java -jar CryptoVision.jar Path/To/Image/File
+```java -jar CryptoVision.jar Path/To/File
 ```
 
 You can also specify the encryption key from the command line.
@@ -30,8 +30,8 @@ You can also specify the encryption key from the command line.
 - `/src/`	
 	CryptoVision source
 - `/test/`	
-	Sample test images
+	Sample test data
 - `README.md`	
 	This readme file
 - `CryptoVision.jar`	
-	The runnable image encryptor
+	The runnable data encryptor
