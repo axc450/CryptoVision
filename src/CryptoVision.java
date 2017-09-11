@@ -15,7 +15,7 @@ public class CryptoVision
 	{
 		if(args.length > 2)
 		{
-			throwError("Too many arguments were given!");
+			Print.throwError("Too many arguments were given!");
 		}
 		
 		if(args.length == 2)
@@ -80,14 +80,14 @@ public class CryptoVision
 			File file = new File(strPath);
 			if(!file.isFile())
 			{
-				throwError("The file \"" + strPath + "\" was not found!");
+				Print.throwError("The file \"" + strPath + "\" was not found!");
 			}
 			
 			return new File(strPath);
 		}
 		catch (Exception e)
 		{
-			throwError("Something went wrong importing your file", e);
+			Print.throwError("Something went wrong importing your file", e);
 			return null;
 		}
 	
@@ -102,7 +102,7 @@ public class CryptoVision
 		} 
 		catch (Exception e)
 		{
-			throwError("Something went wrong importing your image", e);
+			Print.throwError("Something went wrong importing your image", e);
 			return null;
 		}
 	}
@@ -116,7 +116,7 @@ public class CryptoVision
 		} 
 		catch (Exception e)
 		{
-			throwError("Something went wrong importing your text", e);
+			Print.throwError("Something went wrong importing your text", e);
 			return null;
 		}
 	}
@@ -129,7 +129,7 @@ public class CryptoVision
 		}
 		catch(Exception e)
 		{
-			throwError("Something went wrong exporting your image", e);
+			Print.throwError("Something went wrong exporting your image", e);
 		}
 	}
 	
@@ -141,26 +141,7 @@ public class CryptoVision
 		}
 		catch(Exception e)
 		{
-			throwError("Something went wrong exporting your text", e);
+			Print.throwError("Something went wrong exporting your text", e);
 		}
-	}
-	
-	public static void printPercent(int p)
-	{
-		System.out.print("\rEncrypting: " + p + "%");
-		System.out.flush();
-	}
-	
-	public static void throwError(String msg, Exception e)
-	{
-		System.out.println(msg);											//Debug message
-		System.out.println("Error: " + e.getMessage());						//Debug message
-		System.exit(1);														//Exit Program
-	}
-	
-	public static void throwError(String msg)
-	{
-		System.out.println("Error: " + msg);											//Debug message
-		System.exit(1);														//Exit Program
 	}
 }

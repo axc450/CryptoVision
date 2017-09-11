@@ -20,7 +20,7 @@ public class TextEncrypt
 		}
 		catch(Exception e)
 	    {
-			CryptoVision.throwError("Something went wrong setting up the encryptor", e);
+			Print.throwError("Something went wrong setting up the encryptor", e);
 	    }
 	}
 
@@ -37,13 +37,13 @@ public class TextEncrypt
 	                    encryptedStr += newChr;										//Change the input image pixel at this location
 	            }
 	                
-	            CryptoVision.printPercent(100);											//Print encryption progress
+	            Print.printPercent(100);											//Print encryption progress
 			
 	            return encryptedStr;											//Return the new image
 			}
 		    catch(Exception e)
 		    {
-		    	CryptoVision.throwError("Something went wrong encrypting your text", e);
+		    	Print.throwError("Something went wrong encrypting your text", e);
 				return null;
 		    }
 	}

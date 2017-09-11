@@ -22,7 +22,7 @@ public class ImageEncrypt
 		}
 		catch(Exception e)
 	    {
-			CryptoVision.throwError("Something went wrong setting up the encryptor", e);
+			Print.throwError("Something went wrong setting up the encryptor", e);
 	    }
 	}
 
@@ -41,14 +41,14 @@ public class ImageEncrypt
 	                    encryptedImage.setRGB(x, y, newColor.getRGB());						//Change the input image pixel at this location
 	                }
 	                
-	                CryptoVision.printPercent((int)Math.ceil(100 * (y+1)/inputImage.getHeight()));		//Print encryption progress
+	                Print.printPercent((int)Math.ceil(100 * (y+1)/inputImage.getHeight()));		//Print encryption progress
 	            }
 			
 			return encryptedImage;											//Return the new image
 		}
 	    catch(Exception e)
 	    {
-	    	CryptoVision.throwError("Something went wrong encrypting your image", e);
+	    	Print.throwError("Something went wrong encrypting your image", e);
 			return null;
 	    }
 	}
