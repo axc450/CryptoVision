@@ -35,9 +35,8 @@ public class TextEncrypt
 	                    char chr = inputText.charAt(i);								//Get the current pixel color at this location
 	                    char newChr = encryptChr(chr);								//Ecrypt the pixel
 	                    encryptedStr += newChr;										//Change the input image pixel at this location
+	                    Print.printPercent((int)Math.ceil(100 * (i+1)/inputText.length()));	//Print encryption progress
 	            }
-	                
-	            Print.printPercent(100);											//Print encryption progress
 			
 	            return encryptedStr;											//Return the new image
 			}
