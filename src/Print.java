@@ -1,4 +1,4 @@
-public class Print 
+public class Print	//Provides program output methods
 {
 	public static void printPercent(int p)		//Provides encryption progress output
 	{
@@ -6,10 +6,10 @@ public class Print
 		System.out.flush();								//Flush output
 	}
 
-	public static void throwError(String msg, Exception e)	//Provides output when an error occurs (with exception message)
+	public static void throwError(String msg, String err)	//Provides output when an error occurs (with exception message)
 	{
 		System.out.println(msg);							//Output message
-		System.out.println("Error: " + e.getMessage());		//Output message
+		System.out.println("Error: " + err);				//Output message
 		System.exit(1);										//Exit Program
 	}
 
