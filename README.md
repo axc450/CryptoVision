@@ -6,7 +6,8 @@ _The CryptoVision project was originally developed as part of a Computer Science
 
 ## About
 
-A segment of a larger piece of security suite software (CryptoVision) to allow data (images/text) to be encrypted/decrypted using an MD5 crypto algorithm.
+A segment of a larger piece of security suite software (CryptoVision) to allow data (images/text) to be encrypted/decrypted using an MD5 crypto algorithm (XOR).
+CrytoVision is unique in the fact encrypted data can still be viewed after encryption.
 
 ## Getting Started
 
@@ -24,6 +25,15 @@ You can also specify the encryption key from the command line.
 
 ```java -jar CryptoVision.jar Path/To/Image/File KeyToUse
 ```
+
+## Process
+
+- Data is loaded into the program
+- Encryption key is converted into an MD5 hash to secure the key
+- MD5 hash is converted into a seed (value used for consistant 'random' generation)
+- Data is XOR'd with 'random' data
+- Encrypted data is saved back to a file
+- Decryption is possible due to 'random' data being replicated via the seed
 
 ## Repo
 
