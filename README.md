@@ -21,7 +21,7 @@ You can specify the data file to process straight from the command line.
 ```java -jar CryptoVision.jar Path/To/File
 ```
 
-You can also specify the encryption key from the command line.
+You can also specify a custom encryption key from the command line (recommended).
 
 ```java -jar CryptoVision.jar Path/To/Image/File KeyToUse
 ```
@@ -30,7 +30,7 @@ You can also specify the encryption key from the command line.
 
 - Data is loaded into the program
 - Encryption key is converted into an MD5 hash to secure the key
-- MD5 hash is converted into a seed (value used for consistant 'random' generation)
+- MD5 hash is converted into a seed (value used for consistent 'random' generation)
 - Data is XOR'd with 'random' data
 - Encrypted data is saved back to a file
 - Decryption is possible due to 'random' data being replicated via the seed
