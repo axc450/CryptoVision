@@ -9,6 +9,8 @@ _The CryptoVision project was originally developed as part of a Computer Science
 A segment of a larger piece of security suite software (CryptoVision) to allow data (images/text) to be encrypted/decrypted using an MD5 crypto algorithm (XOR).
 CrytoVision is unique in the fact encrypted data can still be viewed after encryption.
 
+![Encryption of the Bird test image](https://i.imgur.com/O07VD7z.png)
+
 ## Getting Started
 
 The encryptor itself is a single Jar file however some test images/text are included. To run the encryptor, navigate to the folder in which the Jar is contained, and run the follow from a terminal/command line.
