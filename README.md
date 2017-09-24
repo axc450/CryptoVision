@@ -20,12 +20,12 @@ The encryptor itself is a single Jar file however some test images/text are incl
 
 You can specify the data file to process straight from the command line.
 
-```java -jar CryptoVision.jar Path/To/File
+```java -jar CryptoVision.jar <path/to/file>
 ```
 
 You can also specify a custom encryption key from the command line (recommended).
 
-```java -jar CryptoVision.jar Path/To/Image/File KeyToUse
+```java -jar CryptoVision.jar <path/to/file> <key>
 ```
 
 ## Process
